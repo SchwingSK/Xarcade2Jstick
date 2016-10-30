@@ -153,12 +153,20 @@ int main(int argc, char* argv[]) {
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_C:
-					uinput_gpad_write(&uinp_gpads[0], BTN_EXTRA,
+					uinput_gpad_write(&uinp_gpads[0], BTN_TL2,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_3:
 				case KEY_V:
-					uinput_gpad_write(&uinp_gpads[0], BTN_MODE,
+					uinput_gpad_write(&uinp_gpads[0], BTN_TR2,
+							xarcdev.ev[ctr].value > 0, EV_KEY);
+					break;
+				case KEY_P:
+					uinput_gpad_write(&uinp_gpads[0], BTN_THUMBL,
+							xarcdev.ev[ctr].value > 0, EV_KEY);
+					break;
+				case KEY_ENTER:
+					uinput_gpad_write(&uinp_gpads[0], BTN_THUMBR,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				// case KEY_5:

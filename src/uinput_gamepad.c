@@ -77,8 +77,10 @@ int16_t uinput_gpad_open(UINP_GPAD_DEV* const gpad, UINPUT_GPAD_TYPE_E type,
 	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_SOUTH);
 	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_EAST);
 	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_TR);
-	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_EXTRA);
-	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_MODE);
+	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_TL2);
+	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_TR2);
+	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_THUMBL);
+	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_THUMBR);
 	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_SELECT);
 	ioctl(gpad->fd, UI_SET_KEYBIT, BTN_START);
 
