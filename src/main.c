@@ -129,11 +129,11 @@ int main(int argc, char* argv[]) {
 				/* ----------------  Player 1 controls ------------------- */
 				/* buttons */
 				case KEY_LEFTCTRL:
-					uinput_gpad_write(&uinp_gpads[0], BTN_WEST,
+					uinput_gpad_write(&uinp_gpads[0], BTN_A,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_LEFTALT:
-					uinput_gpad_write(&uinp_gpads[0], BTN_NORTH,
+					uinput_gpad_write(&uinp_gpads[0], BTN_B,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_SPACE:
@@ -141,11 +141,11 @@ int main(int argc, char* argv[]) {
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_LEFTSHIFT:
-					uinput_gpad_write(&uinp_gpads[0], BTN_SOUTH,
+					uinput_gpad_write(&uinp_gpads[0], BTN_X,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_Z:
-					uinput_gpad_write(&uinp_gpads[0], BTN_EAST,
+					uinput_gpad_write(&uinp_gpads[0], BTN_Y,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_X:
@@ -156,7 +156,6 @@ int main(int argc, char* argv[]) {
 					uinput_gpad_write(&uinp_gpads[0], BTN_TL2,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
-				case KEY_3:
 				case KEY_V:
 					uinput_gpad_write(&uinp_gpads[0], BTN_TR2,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
@@ -169,10 +168,6 @@ int main(int argc, char* argv[]) {
 					uinput_gpad_write(&uinp_gpads[0], BTN_THUMBR,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
-				// case KEY_5:
-				// 	uinput_gpad_write(&uinp_gpads[0], BTN_TR,
-				// 			xarcdev.ev[ctr].value > 0, EV_KEY);
-				// 	break;
 				case KEY_1:
 					/* handle combination */
 					if (keyStates[KEY_3] && xarcdev.ev[ctr].value) {
@@ -230,11 +225,11 @@ int main(int argc, char* argv[]) {
 					/* ----------------  Player 2 controls ------------------- */
 					/* buttons */
 				case KEY_A:
-					uinput_gpad_write(&uinp_gpads[1], BTN_WEST,
+					uinput_gpad_write(&uinp_gpads[1], BTN_A,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_S:
-					uinput_gpad_write(&uinp_gpads[1], BTN_NORTH,
+					uinput_gpad_write(&uinp_gpads[1], BTN_B,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_Q:
@@ -242,12 +237,11 @@ int main(int argc, char* argv[]) {
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_W:
-					uinput_gpad_write(&uinp_gpads[1], BTN_SOUTH,
+					uinput_gpad_write(&uinp_gpads[1], BTN_X,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_E:
-				case KEY_I:
-					uinput_gpad_write(&uinp_gpads[1], BTN_EAST,
+					uinput_gpad_write(&uinp_gpads[1], BTN_Y,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
 				case KEY_LEFTBRACE:
@@ -260,7 +254,6 @@ int main(int argc, char* argv[]) {
 					uinput_gpad_write(&uinp_gpads[1], BTN_TR2,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
-				case KEY_4:
 				case KEY_L:
 					uinput_gpad_write(&uinp_gpads[1], BTN_TL2,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
@@ -337,7 +330,7 @@ int main(int argc, char* argv[]) {
 static void teardown() {
 	printf("Exiting.\n");
 	SYSLOG(LOG_NOTICE, "Exiting.");
-
+	
 	input_xarcade_close(&xarcdev);
 	uinput_gpad_close(&uinp_gpads[0]);
 	uinput_gpad_close(&uinp_gpads[1]);
