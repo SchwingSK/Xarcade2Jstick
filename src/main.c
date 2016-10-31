@@ -53,8 +53,7 @@ static void signal_handler(int signum);
 
 int main(int argc, char* argv[]) {
 	int result = 0;
-	int rd, ctr, combo = 0;
-	char keyStates[256];
+	int rd, ctr = 0;
 	char* evdev = NULL;
 
 	int detach = 0;
@@ -121,8 +120,6 @@ int main(int argc, char* argv[]) {
 			if (xarcdev.ev[ctr].type == EV_MSC)
 				continue;
 			if (EV_KEY == xarcdev.ev[ctr].type) {
-
-				keyStates[xarcdev.ev[ctr].code] = xarcdev.ev[ctr].value;
 
 				switch (xarcdev.ev[ctr].code) {
 
