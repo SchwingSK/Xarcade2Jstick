@@ -152,11 +152,11 @@ int main(int argc, char* argv[]) {
 					uinput_gpad_write(&uinp_gpads[0], BTN_TL,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
-				case KEY_C:
+				case KEY_V:
 					uinput_gpad_write(&uinp_gpads[0], BTN_TL2,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
-				case KEY_V:
+				case KEY_C:
 					uinput_gpad_write(&uinp_gpads[0], BTN_TR2,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
@@ -330,7 +330,7 @@ int main(int argc, char* argv[]) {
 static void teardown() {
 	printf("Exiting.\n");
 	SYSLOG(LOG_NOTICE, "Exiting.");
-	
+
 	input_xarcade_close(&xarcdev);
 	uinput_gpad_close(&uinp_gpads[0]);
 	uinput_gpad_close(&uinp_gpads[1]);
