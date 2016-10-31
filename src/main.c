@@ -240,7 +240,7 @@ int main(int argc, char* argv[]) {
 					uinput_gpad_write(&uinp_gpads[1], BTN_X,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
-				case KEY_E:
+				case KEY_I:
 					uinput_gpad_write(&uinp_gpads[1], BTN_Y,
 							xarcdev.ev[ctr].value > 0, EV_KEY);
 					break;
